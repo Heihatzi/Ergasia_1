@@ -8,77 +8,162 @@ public class Ergasia_1 {
 
     public static void main(String[] args) {
 
-        List<Student> ls = new ArrayList();
-        List<Trainer> lt = new ArrayList();
-        List<Course> lc = new ArrayList();
-        List<Assignment> la = new ArrayList();
+        /**
+         * LISTS CREATE
+         */
+        List<Student> studentList = new ArrayList();
+        List<Trainer> trainerList = new ArrayList();
+        List<Course> courseList = new ArrayList();
+        List<Assignment> assignmentList = new ArrayList();
 
-        Student s1 = new Student();
-        Student s2 = new Student();
-        Student s3 = new Student();
-        Student s4 = new Student();
-        Student s5 = new Student();
+        /**
+         * OPEN SCANNER
+         */
+        Scanner input = new Scanner(System.in);
 
-        Trainer t1 = new Trainer();
-        Trainer t2 = new Trainer();
-        Trainer t3 = new Trainer();
-        Trainer t4 = new Trainer();
-        Trainer t5 = new Trainer();
+        System.out.println("\nWelcome! \nTo import data manually, type \"1\",\nTo work with a prefixed set of data, type \"2\"    ");
+        int choice1 = input.nextInt();
 
-        Course c1 = new Course();
-        Course c2 = new Course();
-        Course c3 = new Course();
-        Course c4 = new Course();
-        Course c5 = new Course();
-
-        Assignment a1 = new Assignment();
-        Assignment a2 = new Assignment();
-        Assignment a3 = new Assignment();
-        Assignment a4 = new Assignment();
-        Assignment a5 = new Assignment();
-
-        ls.add(s1);
-        ls.add(s2);
-        ls.add(s3);
-        ls.add(s4);
-        ls.add(s5);
-
-        lt.add(t1);
-        lt.add(t2);
-        lt.add(t3);
-        lt.add(t4);
-        lt.add(t5);
-
-        lc.add(c1);
-        lc.add(c2);
-        lc.add(c3);
-        lc.add(c4);
-        lc.add(c5);
-
-        la.add(a1);
-        la.add(a2);
-        la.add(a3);
-        la.add(a4);
-        la.add(a5);
-
-        System.out.println(ls);
-        System.out.println(lt);
-        System.out.println(lc);
-        System.out.println(la);
-
-//        System.out.println("Welcome! Please Type number to pick menu item: \n "
-//                + "1. Students \n 2. Assignments \n 3. Trainers \n 4. Courses ");
-        String q1 = null;
-
-        while (!q1.equals("y") || !q1.equals("n")) {
-            System.out.println("Insert data? y/n : ");  // question 1  (q1)
-            Scanner input = new Scanner(System.in);
-            q1 = input.next();
+        while (choice1 != 1 && choice1 != 2) {
+            System.out.println("\nPlease type \"1\" to import data, \nor \"2\" to work with a prefixed set of data....    ");
+            choice1 = input.nextInt();
         }
 
-        if (q1.equals("")) {
-            
+        switch (choice1) {
+            case 1:
+                System.out.println("----------------------");
+                System.out.println("| MANUAL DATA IMPORT |");
+                System.out.println("----------------------");
+
+                /**
+                 * STUDENT IMPORT
+                 */
+                System.out.println("\nNumber of students to import: ");
+                int nStudents = input.nextInt();
+                System.out.println("Importing " + nStudents + " students...... \n");
+
+                for (int i = 1; i <= nStudents; i++) {
+                    System.out.println("Last name of student " + i + ": ");
+                    String lastName = input.next();
+                    System.out.println("First name of student " + i + ": ");
+                    String firstName = input.next();
+                    Student s = new Student(firstName, lastName);
+                    studentList.add(s);
+                }
+
+                /**
+                 * TRAINER IMPORT
+                 */
+                System.out.println("\n\nNumber of trainers to import: ");
+                int nTrainers = input.nextInt();
+                System.out.println("Importing trainers...... \n");
+
+                for (int i = 1; i <= nTrainers; i++) {
+                    System.out.println("Last name of trainer " + i + ": ");
+                    String lastName = input.next();
+                    System.out.println("First name of trainer " + i + ": ");
+                    String firstName = input.next();
+                    Trainer t = new Trainer(firstName, lastName);
+                    trainerList.add(t);
+                }
+
+                /**
+                 * COURSE IMPORT
+                 */
+                System.out.println("\n\nNumber of courses to import: ");
+                int nCourses = input.nextInt();
+                System.out.println("Importing courses...... \n");
+
+                for (int i = 1; i <= nCourses; i++) {
+                    System.out.println("Title of course " + i + ": ");
+                    String title = input.next();
+                    Course c = new Course(title);
+                    courseList.add(c);
+                }
+
+                /**
+                 * ASSIGNMENT IMPORT
+                 */
+                System.out.println("\n\nNumber of assignments to import: ");
+                int nAssignments = input.nextInt();
+                System.out.println("Importing assignments...... \n");
+
+                for (int i = 1; i <= nAssignments; i++) {
+                    System.out.println("Title of assignment " + i + ": ");
+                    String title = input.next();
+                    Assignment a = new Assignment(title);
+                    assignmentList.add(a);
+                }
+                break;
+            case 2:
+                System.out.println("LOADING PREFIXED DATA......");
+                //BALE EDW ETOIMES LISTES
+                studentList.add(new Student("dimitris1","xatzhgeorgiou1"));
+                studentList.add(new Student("dimitris2","xatzhgeorgiou2"));
+                studentList.add(new Student("dimitris3","xatzhgeorgiou3"));
+                studentList.add(new Student("dimitris4","xatzhgeorgiou4"));
+                studentList.add(new Student("dimitris5","xatzhgeorgiou5"));
+                
+                trainerList.add(new Trainer("tasos1","lelakis1"));
+                trainerList.add(new Trainer("tasos2","lelakis2"));
+                trainerList.add(new Trainer("tasos3","lelakis3"));
+                trainerList.add(new Trainer("tasos4","lelakis4"));
+                trainerList.add(new Trainer("tasos5","lelakis5"));
+                
+                courseList.add(new Course("title1"));
+                courseList.add(new Course("title2"));
+                courseList.add(new Course("title3"));
+                courseList.add(new Course("title4"));
+                courseList.add(new Course("title5"));
+                
+                assignmentList.add(new Assignment("atitle1"));
+                assignmentList.add(new Assignment("atitle2"));
+                assignmentList.add(new Assignment("atitle3"));
+                assignmentList.add(new Assignment("atitle4"));
+                assignmentList.add(new Assignment("atitle5"));
+                
+                
+                System.out.println("DATA READY");
         }
+
+        /**
+         * PRINT STUDENT LIST
+         */
+        System.out.println("\nLIST OF STUDENTS\n");
+
+        for (Student s : studentList) {
+            System.out.println(s);
+        }
+
+        /**
+         * PRINT TRAINER LIST
+         */
+        System.out.println("\nLIST OF TRAINERS\n");
+
+        for (Trainer t : trainerList) {
+            System.out.println(t);
+        }
+
+        /**
+         * PRINT COURSE LIST
+         */
+        System.out.println("\nLIST OF COURSES\n");
+
+        for (Course c : courseList) {
+            System.out.println(c);
+        }
+
+        /**
+         * PRINT ASSIGNMENT LIST
+         */
+        System.out.println("\nLIST OF ASSIGNMENTS\n");
+
+        for (Assignment a : assignmentList) {
+            System.out.println(a);
+        }
+
+
     }
-
+//--------------------------------------- MAIN -----------------------------------------
+//--------------------------------------------------------------------------------------
 }

@@ -79,4 +79,9 @@ public class Student {
         return tuitionFees;
     }
 
+    @Override
+    public String toString() {
+        return "Student{"  + lastName +" "+ firstName + ", DOB: " + dateOfBirth + ", Tuition Fees: " + tuitionFees + '}';
+    }
+
 }

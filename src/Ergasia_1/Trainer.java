@@ -67,4 +67,10 @@ public class Trainer {
     public String getSubject(){
         return subject;
     }
+
+    @Override
+    public String toString() {
+        return "Trainer{" + "firstName=" + firstName + ", lastName=" + lastName + ", subject=" + subject + '}';
+    }
+    
 }

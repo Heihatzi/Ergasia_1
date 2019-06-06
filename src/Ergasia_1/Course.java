@@ -20,6 +20,12 @@ public class Course {
     public Course() {
     }
 
+    public Course(String title) {
+        this.title = title;
+    }
+    
+    
+
     public Course(String title, String stream) {
         this.title = title;
         this.stream = stream;
@@ -93,6 +99,11 @@ public class Course {
     
     public int getEnd_date(){
         return end_date;
+    }
+
+    @Override
+    public String toString() {
+        return "Course{" + "title=" + title + ", stream=" + stream + ", type=" + type + ", start_date=" + start_date + ", end_date=" + end_date + '}';
     }
     
 }
