@@ -1,5 +1,9 @@
 package Ergasia_1;
 
+import static Ergasia_1.Ergasia_1.assignmentList;
+import static Ergasia_1.Ergasia_1.returnValidNumber;
+import java.util.Scanner;
+
 public class Assignment {
 
     private String title;
@@ -81,7 +85,32 @@ public class Assignment {
 
     @Override
     public String toString() {
-        return "Assignment{" + "title=" + title + ", description=" + description + ", subDateTime=" + subDateTime + ", oralMark=" + oralMark + ", totalMark=" + totalMark + '}';
+        return "{" + "title: " + title + ", descr: " + description + ", subDateTime: " + subDateTime + ", oral mark: " + oralMark + ", totalMark=" + totalMark + '}';
     }
+/**
+     * ASSIGNMENT IMPORT FUNCTION
+     * @param input
+     */
+    public static void assignmentImport(Scanner input) {
+        System.out.println("\n\nNumber of assignments to import: ");
+        int nAssignments = returnValidNumber(input);
+        System.out.println("Importing" + nAssignments + " assignments...... \n");
 
+        for (int i = 1; i <= nAssignments; i++) {
+            System.out.println("Title of assignment " + i + ": ");
+            String title = input.next();
+            Assignment a = new Assignment(title);
+            assignmentList.add(a);
+        }
+    }
+    
+     /**
+     * PRINT ASSIGNMENT LIST
+     */
+    public static void printAssignmentList() {
+        System.out.println("\n-- LIST OF ASSIGNMENTS --\n");
+        for (Assignment a : assignmentList) {
+            System.out.println(a);
+        }
+    }
 }

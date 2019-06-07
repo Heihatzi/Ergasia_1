@@ -1,6 +1,10 @@
 
 package Ergasia_1;
 
+import static Ergasia_1.Ergasia_1.courseList;
+import static Ergasia_1.Ergasia_1.returnValidNumber;
+import java.util.Scanner;
+
 public class Course {
     
     private String title;
@@ -103,7 +107,31 @@ public class Course {
 
     @Override
     public String toString() {
-        return "Course{" + "title=" + title + ", stream=" + stream + ", type=" + type + ", start_date=" + start_date + ", end_date=" + end_date + '}';
+        return "{" + "title: " + title + ", stream: " + stream + ", type: " + type + ", start: " + start_date + ", end: " + end_date + '}';
+    }
+    /**
+     * COURSE IMPORT FUNCTION
+     * @param input
+     */
+    public static void courseImport(Scanner input) {
+        System.out.println("\n\nNumber of courses to import: ");
+        int nCourses = returnValidNumber(input);
+        System.out.println("Importing " + nCourses + "courses...... \n");
+        for (int i = 1; i <= nCourses; i++) {
+            System.out.println("Title of course " + i + ": ");
+            String title = input.next();
+            Course c = new Course(title);
+            courseList.add(c);
+        }
     }
     
+     /**
+     * PRINT COURSE LIST
+     */
+    public static void printCourseList() {
+        System.out.println("\n-- LIST OF COURSES --\n");
+        for (Course c : courseList) {
+            System.out.println(c);
+        }
+    }
 }
