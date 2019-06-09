@@ -89,7 +89,7 @@ public class Student {
 
     /**
      * STUDENT IMPORT FUNCTION
-     * @param input
+     * @param input is Scanner
      */
     public static void studentImport(Scanner input) {
         System.out.println("\nNumber of students to import: ");
@@ -110,6 +110,7 @@ public class Student {
      * PRINT STUDENT LIST
      */
     public static void printStudentList() {
+        
         System.out.println("\n-- LIST OF STUDENTS --\n");
         for (Student s : studentList) {
             System.out.println(s);

@@ -30,7 +30,7 @@ public class Ergasia_1 {
         }
 
         switch (choice1) {
-            case 1:
+            case 1:                                   //EISAGWGH DEDOMENWN
                 System.out.println("----------------------");
                 System.out.println("| MANUAL DATA IMPORT |");
                 System.out.println("----------------------");
@@ -44,14 +44,31 @@ public class Ergasia_1 {
             case 2:                                    //ETOIMES LISTES
                 System.out.println("LOADING PREFIXED DATA......");
                 etoimesListes.autoDataEntry();
-                System.out.println("DATA READY");
+            //System.out.println("DATA READY");
         }
 
-        Student.printStudentList();
-        Trainer.printTrainerList();
-        Course.printCourseList();
-        Assignment.printAssignmentList();
+        Menu.mainMenu(input);
 
+//        switch (menuChoice) {
+//            case 1:
+//                Student.printStudentList();
+//                break;
+//            case 2:
+//                Trainer.printTrainerList();
+//                break;
+//            case 3:
+//                Assignment.printAssignmentList();
+//                break;
+//            case 4:
+//                Course.printCourseList();
+//                break;
+//        }
+
+//        Student.printStudentList();
+//        Trainer.printTrainerList();
+//        Course.printCourseList();
+//        Assignment.printAssignmentList();
+        input.close();
     }
 //--------------------------------------- MAIN -----------------------------------------
 //--------------------------------------------------------------------------------------
@@ -182,9 +199,12 @@ public class Ergasia_1 {
 //            System.out.println(a);
 //        }
 //    }
-
-    /*
-    VALIDATE NUMBER INPUT (NATURAL NUMBER >0)
+    /**
+     *
+     * VALIDATE NUMBER INPUT (NATURAL NUMBER >0)
+     *
+     * @param scanner
+     * @return
      */
     public static int returnValidNumber(Scanner scanner) {
         int num;
@@ -200,7 +220,7 @@ public class Ergasia_1 {
                 scanner.next();
             }
             num = scanner.nextInt();
-        } while (num <= 0);
+        } while (num < 0);
         return num;
     }
 }
