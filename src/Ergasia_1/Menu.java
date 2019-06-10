@@ -16,7 +16,7 @@ import java.util.Scanner;
 public class Menu {
 
     /**
-     * EMFANISH KYRIWS MENOY
+     * EKTYPWSH STHN OTHONH TOY KYRIWS MENOY
      *
      * @param input
      */
@@ -30,7 +30,13 @@ public class Menu {
         System.out.println("6.  Print all trainers per course");
         System.out.println("7.  Print all assignments per course");
         System.out.println("8.  Print all assignments per student");
-        System.out.println("9.  Print all students that belong to more than one courses");
+        System.out.println("9.  Print all students that attend more than one courses");
+        System.out.println("");
+        System.out.println("10. Import students");
+        System.out.println("11. Import trainers");
+        System.out.println("12. Import assignments");
+        System.out.println("13. Import courses");
+        System.out.println("");
         System.out.println("0.  Exit program");
 
         int menuChoice = returnValidNumber(input);
@@ -41,19 +47,31 @@ public class Menu {
         switch (menuChoice) {
             case 1:
                 Student.printStudentList();
-                anotherList(input);
+                anotherAction(input);
             case 2:
                 Trainer.printTrainerList();
-                anotherList(input);
+                anotherAction(input);
             case 3:
                 Assignment.printAssignmentList();
-                anotherList(input);
+                anotherAction(input);
             case 4:
                 Course.printCourseList();
-                anotherList(input);
+                anotherAction(input);
+
+            //PROSTHESE CASES GIA UPOLOIPA ERWTHMATA-------------------------
                 
-                //PROSTHESE CASES GIA UPOLOIPA ERWTHMATA-------------------------
-                
+            case 10:
+                Student.studentImport(input);
+                anotherAction(input);
+            case 11:
+                Trainer.trainerImport(input);
+                anotherAction(input);
+            case 12:
+                Assignment.assignmentImport(input);
+                anotherAction(input);
+            case 13:
+                Course.courseImport(input);
+                anotherAction(input);
             case 0:
                 exit(0);
             default:
@@ -63,12 +81,12 @@ public class Menu {
     }
 
     /**
-     * ERWTHSH EPITHIMIAS XRHSTH GIA EKTYPWSH EPOMENHS LISTAS
+     * ERWTHSH EPITHYMIAS XRHSTH GIA ALLH ENERGEIA
      *
      * @param input
      */
-    public static void anotherList(Scanner input) {
-        System.out.println("\nDo you want to prin another list? y/n");
+    public static void anotherAction(Scanner input) {
+        System.out.println("\nDo you want to perform another action? y/n");
         String ch1 = input.next();
         while (!ch1.equals("y") && !ch1.equals("n")) {
             System.out.println("You must type \"y\" or \"n\"");

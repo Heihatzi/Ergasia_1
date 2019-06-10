@@ -75,7 +75,7 @@ public class Trainer {
     public static void trainerImport(Scanner input) {
         System.out.println("\n\nNumber of trainers to import: ");
         int nTrainers = returnValidNumber(input);
-        System.out.println("Importing" + nTrainers + " trainers...... \n");
+        System.out.println("Importing " + nTrainers + " trainers...... \n");
         for (int i = 1; i <= nTrainers; i++) {
             System.out.println("Last name of trainer " + i + ": ");
             String lastName = input.next();

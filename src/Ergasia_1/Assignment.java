@@ -94,7 +94,7 @@ public class Assignment {
     public static void assignmentImport(Scanner input) {
         System.out.println("\n\nNumber of assignments to import: ");
         int nAssignments = returnValidNumber(input);
-        System.out.println("Importing" + nAssignments + " assignments...... \n");
+        System.out.println("Importing " + nAssignments + " assignments...... \n");
 
         for (int i = 1; i <= nAssignments; i++) {
             System.out.println("Title of assignment " + i + ": ");

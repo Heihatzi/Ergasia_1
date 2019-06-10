@@ -116,7 +116,7 @@ public class Course {
     public static void courseImport(Scanner input) {
         System.out.println("\n\nNumber of courses to import: ");
         int nCourses = returnValidNumber(input);
-        System.out.println("Importing " + nCourses + "courses...... \n");
+        System.out.println("Importing " + nCourses + " courses...... \n");
         for (int i = 1; i <= nCourses; i++) {
             System.out.println("Title of course " + i + ": ");
             String title = input.next();
