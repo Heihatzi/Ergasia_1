@@ -49,7 +49,6 @@ public class Ergasia_1 {
 
         Menu.mainMenu(input);
 
-
         input.close();
     }
 //--------------------------------------- MAIN -----------------------------------------

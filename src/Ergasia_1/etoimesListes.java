@@ -28,11 +28,9 @@ public class etoimesListes {
         trainerList.add(new Trainer("tasos4", "lelakis4"));
         trainerList.add(new Trainer("tasos5", "lelakis5"));
 
-        courseList.add(new Course("CTitle1"));
-        courseList.add(new Course("cTitle2"));
-        courseList.add(new Course("cTitle3"));
-        courseList.add(new Course("cTitle4"));
-        courseList.add(new Course("cTitle5"));
+        courseList.add(new Course("Java"));
+        courseList.add(new Course("C#"));
+        
 
         assignmentList.add(new Assignment("aTitle1"));
         assignmentList.add(new Assignment("aTitle2"));

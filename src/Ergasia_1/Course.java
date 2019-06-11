@@ -3,6 +3,8 @@ package Ergasia_1;
 
 import static Ergasia_1.Ergasia_1.courseList;
 import static Ergasia_1.Ergasia_1.returnValidNumber;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Course {
@@ -122,6 +124,9 @@ public class Course {
             String title = input.next();
             Course c = new Course(title);
             courseList.add(c);
+            //String listName = "studentsIn_"+c.getTitle()+"_"+c.getStream;
+           // List<Student> listName = new ArrayList();
+            
         }
     }
     
